@@ -1,7 +1,7 @@
 const Campaign = require('../models/campaignModel');
 const Contact = require('../models/contactModel');
 const Message = require('../models/messageModel');
-const { campaignQueue } = require('../services/queue');
+// const { campaignQueue } = require('../services/queue');
 
 // @desc    Create a new campaign
 // @route   POST /api/campaigns
@@ -36,6 +36,7 @@ const createCampaign = async (req, res, next) => {
 
     const createdMessages = await Message.insertMany(messages);
 
+    /*
     for (let i = 0; i < createdMessages.length; i++) {
       const message = createdMessages[i];
       const contact = contacts.find(c => c._id.equals(message.contact));
@@ -48,6 +49,7 @@ const createCampaign = async (req, res, next) => {
       const delay = i * delayInSeconds * 1000;
       await campaignQueue.add(campaign.id, jobData, { delay });
     }
+    */
 
     campaign.status = 'running';
     await campaign.save();

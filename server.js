@@ -3,7 +3,7 @@ const path = require('path');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const connectDB = require('./config/db');
-require('./services/worker.js');
+// require('./services/worker.js');
 
 dotenv.config();
 
