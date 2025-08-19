@@ -34,11 +34,15 @@ These instructions will guide you on how to get a copy of the project up and run
     ```
 
 4.  **Create Environment File:**
-    In the root directory of the project, create a file named `.env`. Add the following content to the file, making sure to use your actual MongoDB connection string:
+    In the root directory of the project, create a file named `.env`. Add the following content to the file:
     ```
     MONGO_URI=<your-mongodb-connection-string>
     NODE_ENV=production
+    JWT_SECRET=<your-jwt-secret-key>
     ```
+    -   Replace `<your-mongodb-connection-string>` with your actual MongoDB connection string.
+    -   Replace `<your-jwt-secret-key>` with any long, random string. This key is used to secure user login sessions.
+
     *Example `MONGO_URI`: `mongodb+srv://user:password@cluster.mongodb.net/database?retryWrites=true&w=majority`*
 
 5.  **Build the Frontend:**
