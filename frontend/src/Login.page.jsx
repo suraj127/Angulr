@@ -17,7 +17,7 @@ const Login = () => {
       () => {
         // On successful login, you would typically redirect the user
         // For now, we'll just show a success message
-        // window.location.reload(); // Or use React Router to navigate
+        window.location.reload(); // Or use React Router to navigate
         setMessage('Login successful!');
         setLoading(false);
       },
